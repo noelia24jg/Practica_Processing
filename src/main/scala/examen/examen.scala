@@ -86,7 +86,7 @@ object examen {
     val rdd = spark.sparkContext.parallelize(palabras)
 
     val contar = rdd.map(a => (a, 1)).reduceByKey(_ + _)
-
+    contar.collect().foreach(println)
     contar
   }
 
