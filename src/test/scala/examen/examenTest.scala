@@ -29,7 +29,8 @@ class examenTest extends TestInit {
 
     val out = ejercicio1(estudiantes).collect().map(_.getString(0))
 
-    out shouldBe List("María", "Juan", "Lucía", "Pedro", "Sofía")
+    out shouldBe List("Sofía", "María", "Lucía", "Juan", "Pedro")
+
   }
 
   "ejercicio2" should "determinar si los años de los estudiantes son pares o impares" in {

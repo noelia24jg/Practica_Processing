@@ -19,15 +19,18 @@ object examen {
 
 
   def ejercicio1(df: DataFrame)(implicit spark: SparkSession): DataFrame = {
-    println("Esquema")
-    df.printSchema()
-    println("Calificaciones superiores a 8")
-    df.filter("Calificacion > 8").show()
-    println("Los nombres ordenados por calificacion")
-    df.select("Nombre", "Calificacion").orderBy(col("Calificacion").desc).show()
-    println("Dataframe")
-    df.show()
-    df
+      println("Esquema")
+      df.printSchema()
+      println("Calificaciones superiores a 8")
+      df.filter("Calificacion > 8").show()
+
+      println("Los nombres ordenados por calificación")
+      val resultado = df.select("Nombre", "Calificacion").orderBy(col("Calificacion").desc)
+      resultado.show()
+
+      resultado
+
+
   }
 
 
